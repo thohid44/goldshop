@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:goldshop/Screen/login.dart';
 
 class SaveChange extends StatefulWidget {
   const SaveChange({Key? key}) : super(key: key);
@@ -115,20 +116,26 @@ class _SaveChangeState extends State<SaveChange> {
                       SizedBox(
                         height: 30.h,
                       ),
-                      Container(
-                        alignment: Alignment.center,
-                        width: 307.w,
-                        height: 46.h,
-                        decoration: BoxDecoration(
-                            color: Color(0xffFF928E),
-                            borderRadius: BorderRadius.circular(9.r)),
-                        child: Text(
-                          "Save Change",
-                          style: TextStyle(
-                              fontSize: 25.sp,
-                              fontFamily: "Itim",
-                              fontWeight: FontWeight.w400,
-                              color: Colors.white),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Login()));
+                        },
+                        child: Container(
+                          alignment: Alignment.center,
+                          width: 307.w,
+                          height: 46.h,
+                          decoration: BoxDecoration(
+                              color: Color(0xffFF928E),
+                              borderRadius: BorderRadius.circular(9.r)),
+                          child: Text(
+                            "Save Change",
+                            style: TextStyle(
+                                fontSize: 25.sp,
+                                fontFamily: "Itim",
+                                fontWeight: FontWeight.w400,
+                                color: Colors.white),
+                          ),
                         ),
                       )
                     ],
