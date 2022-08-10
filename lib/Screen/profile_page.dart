@@ -15,39 +15,35 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  List<Widget> page = [
-    ProfilePost(),
-    ProfileSave(),
-    ProfileRate(),
-    ProfileList()
-  ];
-  int index = 0;
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Container(
-          padding: EdgeInsets.symmetric(horizontal: 10.w),
-          child: ListView(
-            children: [
-              SizedBox(
-                height: 15.h,
-              ),
-              Row(
-                children: [
-                  Container(
-                    // height: 94.h,
-                    // width: 94.w,
-                    child: CircleAvatar(
-                      backgroundImage: AssetImage("assets/order.png"),
-                      radius: 50.r,
-                    ),
+        body: ListView(
+          children: [
+            SizedBox(
+              height: 15.h,
+            ),
+            Row(
+              children: [
+                Container(
+                  // height: 94.h,
+                  // width: 94.w,
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage("assets/order.png"),
+                    radius: 50.r,
                   ),
-                  SizedBox(
-                    width: 10.w,
-                  ),
-                  Container(
-                    width: 230.w,
+                ),
+                SizedBox(
+                  width: 10.w,
+                ),
+                Container(
+                  width: 230.w,
+                  child: Expanded(
                     child: Column(
                       children: [
                         Row(
@@ -188,106 +184,214 @@ class _ProfilePageState extends State<ProfilePage> {
                       ],
                     ),
                   ),
-                ],
-              ),
-              SizedBox(
-                height: 15.h,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    width: 70.w,
-                    child: Row(
-                      children: [
-                        Container(
-                          child: Text(
-                            "Post",
-                            style: TextStyle(
-                                fontSize: 9.sp,
-                                fontWeight: FontWeight.w400,
-                                fontFamily: "Manjari"),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 5.w,
-                        ),
-                        Icon(Icons.post_add),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    width: 70.w,
-                    child: Row(
-                      children: [
-                        Container(
-                          child: Text(
-                            "Save",
-                            style: TextStyle(
-                                fontSize: 9.sp,
-                                fontWeight: FontWeight.w400,
-                                fontFamily: "Manjari"),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 5.w,
-                        ),
-                        Icon(Icons.save),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    width: 70.w,
-                    child: Row(
-                      children: [
-                        Container(
-                          child: Text(
-                            "Rate",
-                            style: TextStyle(
-                                fontSize: 9.sp,
-                                fontWeight: FontWeight.w400,
-                                fontFamily: "Manjari"),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 5.w,
-                        ),
-                        Icon(Icons.star),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    width: 70.w,
-                    child: Row(
-                      children: [
-                        Container(
-                          child: Text(
-                            "List",
-                            style: TextStyle(
-                                fontSize: 9.sp,
-                                fontWeight: FontWeight.w400,
-                                fontFamily: "Manjari"),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 5.w,
-                        ),
-                        Icon(Icons.list),
-                      ],
-                    ),
-                  )
-                ],
-              ),
-              SizedBox(height: 10.h),
-              Expanded(
-                child: Container(
-                  child: page[index],
                 ),
-              )
-            ],
-          ),
+              ],
+            ),
+            SizedBox(
+              height: 15.h,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  width: 70.w,
+                  child: Row(
+                    children: [
+                      Container(
+                        child: Text(
+                          "Post",
+                          style: TextStyle(
+                              fontSize: 9.sp,
+                              fontWeight: FontWeight.w400,
+                              fontFamily: "Manjari"),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 5.w,
+                      ),
+                      Icon(Icons.post_add),
+                    ],
+                  ),
+                ),
+                Container(
+                  width: 70.w,
+                  child: Row(
+                    children: [
+                      Container(
+                        child: Text(
+                          "Save",
+                          style: TextStyle(
+                              fontSize: 9.sp,
+                              fontWeight: FontWeight.w400,
+                              fontFamily: "Manjari"),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 5.w,
+                      ),
+                      Icon(Icons.save),
+                    ],
+                  ),
+                ),
+                Container(
+                  width: 70.w,
+                  child: Row(
+                    children: [
+                      Container(
+                        child: Text(
+                          "Rate",
+                          style: TextStyle(
+                              fontSize: 9.sp,
+                              fontWeight: FontWeight.w400,
+                              fontFamily: "Manjari"),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 5.w,
+                      ),
+                      Icon(Icons.star),
+                    ],
+                  ),
+                ),
+                Container(
+                  width: 70.w,
+                  child: Row(
+                    children: [
+                      Container(
+                        child: Text(
+                          "List",
+                          style: TextStyle(
+                              fontSize: 9.sp,
+                              fontWeight: FontWeight.w400,
+                              fontFamily: "Manjari"),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 5.w,
+                      ),
+                      Icon(Icons.list),
+                    ],
+                  ),
+                )
+              ],
+            ),
+            SizedBox(
+              height: 20.h,
+            ),
+            Card(
+              elevation: 0,
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 20.w),
+                color: Color(0xffF6FAFF),
+                child: Row(
+                  children: [
+                    Container(
+                      alignment: Alignment.center,
+                      width: 30.w,
+                      height: 30.h,
+                      child: Image.asset("assets/2.png"),
+                    ),
+                    SizedBox(
+                      width: 15.w,
+                    ),
+                    Container(
+                      alignment: Alignment.center,
+                      width: 220.w,
+                      height: 40.h,
+                      child: TextField(
+                        decoration: InputDecoration(
+                            hintText: "Location",
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(30.r))),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 15.w,
+                    ),
+                    Container(
+                      alignment: Alignment.center,
+                      width: 30.w,
+                      height: 30.h,
+                      child: Image.asset("assets/search.png"),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 15.h,
+            ),
+            Container(
+              height: 500.h,
+              child: Expanded(
+                child: ListView.builder(
+                    itemCount: 12,
+                    itemBuilder: (BuildContext context, index) {
+                      return ListTile(
+                          leading: CircleAvatar(
+                            backgroundImage: AssetImage("assets/order.png"),
+                          ),
+                          title: Text(
+                            "Angalina Dics",
+                            style: TextStyle(
+                                fontSize: 14.sp,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w700,
+                                fontFamily: "Manjari"),
+                          ),
+                          trailing: Container(
+                            alignment: Alignment.centerRight,
+                            width: 80.w,
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.star,
+                                  color: Colors.amberAccent,
+                                  size: 15.h,
+                                ),
+                                Icon(
+                                  Icons.star,
+                                  color: Colors.amberAccent,
+                                  size: 15.h,
+                                ),
+                                Icon(
+                                  Icons.star,
+                                  color: Colors.amberAccent,
+                                  size: 15.h,
+                                ),
+                                Icon(
+                                  Icons.star,
+                                  color: Colors.amberAccent,
+                                  size: 15.h,
+                                ),
+                                Icon(
+                                  Icons.star,
+                                  color: Colors.amberAccent,
+                                  size: 15.h,
+                                ),
+                              ],
+                            ),
+                          ));
+                    }),
+              ),
+            ),
+          ],
         ),
       ),
     );
   }
 }
+
+
+
+// GridView.builder(
+//                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+//                         crossAxisCount: 2, 
+//                         crossAxisSpacing: 10.w, 
+//                         mainAxisSpacing: 10.h
+                        
+//                         ),
+//                     itemCount: 8,
+//                     itemBuilder: (BuildContext context, index) {
+//                       return Card(child: Container(child: Image.asset("assets/post.png")));
+//                     }),

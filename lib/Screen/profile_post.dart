@@ -5,10 +5,8 @@ class ProfilePost extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView(
-        children: [Text("data")],
-      ),
+    return ListView(
+      children: [Text("data")],
     );
   }
 }

@@ -23,7 +23,8 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
               icon: IconButton(
                   onPressed: () {
-                    print("Home");
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomePage()));
                   },
                   icon: Icon(Icons.home)),
               label: "Home"),
